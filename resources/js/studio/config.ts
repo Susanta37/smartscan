@@ -1,0 +1,168 @@
+import {
+    Camera,
+    Crop,
+    LayoutGrid,
+    ScanLine,
+    FileSignature,
+    Files,
+    ImageDown,
+    BadgeCheck,
+} from 'lucide-react';
+import type { Edit, SheetSettings } from './types';
+export const tools = [
+    {
+        id: 'passport',
+        title: 'Passport Photo Maker',
+        description: 'Perfectly sized photos. Ready for any document.',
+        icon: Camera,
+        tag: 'MOST POPULAR',
+        color: 'blue',
+        features: [
+            'Indian & international presets',
+            'Precise crop & background controls',
+            'Multiple copies on one sheet',
+        ],
+    },
+    {
+        id: 'editor',
+        title: 'Smart Photo Editor',
+        description: 'A little fine-tuning. A much better photograph.',
+        icon: Crop,
+        tag: 'ENHANCE & REFINE',
+        color: 'violet',
+        features: [
+            'Crop, rotate & straighten',
+            'Natural photo enhancement',
+            'Batch editing made simple',
+        ],
+    },
+    {
+        id: 'sheet',
+        title: 'Print Sheet Designer',
+        description: 'Every photo in place. Every sheet put to work.',
+        icon: LayoutGrid,
+        tag: 'PRINT WITH PRECISION',
+        color: 'teal',
+        features: [
+            'Automatic & manual layouts',
+            'Real dimensions at 300 DPI',
+            'Print or export in one click',
+        ],
+    },
+] as const;
+export const futureTools = [
+    { title: 'Signature crop & resize', icon: FileSignature },
+    { title: 'Document scan cleanup', icon: ScanLine },
+    { title: 'PDF merge & split', icon: Files },
+    { title: 'Image compression', icon: ImageDown },
+    { title: 'Compliance guidance', icon: BadgeCheck },
+];
+export const presets = [
+    {
+        id: 'india',
+        name: 'Indian passport · 35 × 45 mm',
+        width: 35,
+        height: 45,
+        background: '#ffffff',
+        guidance:
+            'Center the head, keep eyes level, and leave space above the hair. Check the issuing authority’s current requirements.',
+        dpi: 300,
+    },
+    {
+        id: 'square',
+        name: '2 × 2 inch photo',
+        width: 50.8,
+        height: 50.8,
+        background: '#ffffff',
+        guidance:
+            'Keep the full head visible and centered. A print size does not guarantee document acceptance.',
+        dpi: 300,
+    },
+    {
+        id: 'visa',
+        name: 'Visa photo · 35 × 45 mm',
+        width: 35,
+        height: 45,
+        background: '#ffffff',
+        guidance:
+            'Visa rules vary by country. Verify size, head placement, and background with the relevant authority.',
+        dpi: 300,
+    },
+    {
+        id: 'id',
+        name: 'ID card · 25 × 35 mm',
+        width: 25,
+        height: 35,
+        background: '#ffffff',
+        guidance:
+            'Center the face and confirm the card provider’s requirements.',
+        dpi: 300,
+    },
+    {
+        id: 'print',
+        name: 'Photo print · 4 × 6 inch',
+        width: 101.6,
+        height: 152.4,
+        background: '#ffffff',
+        guidance:
+            'Drag the image to frame your photograph. Original proportions are preserved.',
+        dpi: 300,
+    },
+    {
+        id: 'custom',
+        name: 'Custom dimensions',
+        width: 35,
+        height: 45,
+        background: '#ffffff',
+        guidance: 'Choose your own physical output dimensions.',
+        dpi: 300,
+    },
+];
+export const papers = [
+    { id: '4x6', name: '4 × 6 inch', width: 101.6, height: 152.4 },
+    { id: '5x7', name: '5 × 7 inch', width: 127, height: 177.8 },
+    { id: 'a4', name: 'A4', width: 210, height: 297 },
+    { id: 'a5', name: 'A5', width: 148, height: 210 },
+    { id: 'letter', name: 'Letter', width: 215.9, height: 279.4 },
+    { id: 'legal', name: 'Legal', width: 215.9, height: 355.6 },
+    { id: 'custom', name: 'Custom paper', width: 210, height: 297 },
+];
+export const defaultEdit: Edit = {
+    width: 35,
+    height: 45,
+    copies: 8,
+    rotation: 0,
+    flipX: false,
+    flipY: false,
+    zoom: 1,
+    x: 0,
+    y: 0,
+    brightness: 100,
+    contrast: 100,
+    saturation: 100,
+    exposure: 0,
+    highlights: 0,
+    shadows: 0,
+    sharpness: 0,
+    noise: 0,
+    background: '#ffffff',
+};
+export const defaultSheet: SheetSettings = {
+    paper: '4x6',
+    width: 101.6,
+    height: 152.4,
+    landscape: true,
+    dpi: 300,
+    gapX: 2,
+    gapY: 2,
+    top: 3,
+    bottom: 3,
+    left: 3,
+    right: 3,
+    marks: true,
+    border: false,
+    background: '#ffffff',
+    columns: 0,
+    rows: 0,
+    offsets: {},
+};
